@@ -1,0 +1,29 @@
+.nav-item {
+  text-decoration: none;
+  color: white;
+  margin-left: 25px;
+  transition: 0.3s all;
+  font-size: 16px;
+}
+.nav-search {
+  margin-right: 15px;
+}
+.nav_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-search,
+.nav-item .nav-logo {
+  transition: 0.5s all;
+}
+.nav-logo:hover,
+.nav-item:hover {
+  color: #b43e3e;
+  scale: 1.2;
+}
+.nav-search:hover {
+  scale: 1.1;
+}
+

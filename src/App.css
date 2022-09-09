@@ -1,38 +1,343 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "GmarketSansLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*{
+  font-family: "GmarketSansLight";
+}
+h1,h2,h3{
+  font-family: "GmarketSansBold";
+}
+body {
+  background-color: black !important;
+  color: white !important;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.spinner {
+  background-color: black;
+  height: 800px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+
+
+
+/*movies 페이지*/
+.accordion {
+  margin-top: 70px;
+}
+.accordion button {
+  font-family: "GmarketSansBold";
+}
+.accordion * {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.accordion *:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.accordion-button {
+  border-bottom: 1px solid white;
+  margin-bottom: 10px;
+  border-radius: 0 !important;
+}
+.accordion-button:focus {
+  border-color: white;
+}
+.accordion-button:not(.collapsed) {
+  background-color: black;
+  color: #e50914;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23212529%27%3e%3cpath fill-rule=%27evenodd%27 d=%27M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e);
+  transform: rotate(-180deg);
+}
+
+.accordion-body {
+  text-align: center;
+}
+
+#dropdown-basic {
+  width: fit-content;
+  margin-top: 30px;
+  background-color: #e50914;
+}
+.dropdown-item:focus {
+  background-color: #e50914 !important;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 464px) {
+  #page-row {
+    margin-right: auto;
+    margin-left: auto;
   }
-  to {
-    transform: rotate(360deg);
+  #page-row:first-child {
+    margin-left: -50px;
+    margin-right: -50px;
+  }
+}
+
+/*슬라이더*/
+
+.bar * {
+  box-shadow: none !important;
+  border: none !important;
+}
+.multi-range-slider {
+  border: 0 !important;
+}
+.multi-range-slider .bar-inner {
+  background-color: #e50914 !important;
+  border: 4px solid #e50914 !important;
+}
+.multi-range-slider .thumb::before {
+  background-color: #e50914 !important;
+  margin: -6px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.multi-range-slider .thumb * {
+  background-color: #e50914 !important;
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+}
+
+.slider-ex span {
+  font-family: "GmarketSansBold";
+  font-size: 25px;
+}
+
+.filters {
+  margin-bottom: 30px;
+}
+
+/*movies 긴 카드 */
+.LMC {
+  width: 360px;
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30%;
+  border-radius: 30px;
+  margin-bottom: 40px;
+  display: flex;
+}
+.LMC-info {
+  background: linear-gradient(90deg, #0d0d0c 50%, transparent);
+  padding: 30px;
+  border-radius: 25px;
+  position: relative;
+}
+.LMC-info img {
+  width: 53px;
+  height: 80px;
+}
+.LMC-info h1 {
+  font-size: 30px;
+  margin-left: 20px;
+  width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 1.2;
+  text-align: left;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.titles {
+  display: flex;
+  margin-bottom: 20px;
+}
+.date {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #9ac7fa;
+}
+
+.LMC-badge {
+  border: 1px solid #e50914;
+  background-color: #e50914;
+  color: white;
+  border-radius: 10px;
+  width: fit-content;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.explains {
+  font-size: 13px;
+  width: 180px;
+  height: 45%;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: rgb(170, 170, 170);
+
+  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 1.7;
+  text-align: left;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+}
+
+.LMC-count {
+  position: absolute;
+  bottom: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.LMC-count * {
+  margin-right: 10px;
+}
+
+/*장르 뱃지*/
+.genre-btn {
+  color: #000;
+  cursor: pointer;
+  margin: 10px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 10px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.genre-btn:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.genre-btn:focus {
+  color: #fff;
+  outline: none;
+}
+.genre-btn.color-6 {
+  background-image: linear-gradient(
+    to right,
+    #e50914,
+    #f79533,
+    rgb(33, 2, 2),
+    #e50914
+  );
+  box-shadow: 0 4px 15px 0 rgba(229, 53, 53, 0.75);
+}
+
+/*페이지 네이션*/
+.pagination {
+  justify-content: center;
+}
+.pagination li {
+  margin: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  align-items: center;
+}
+.pagination a {
+  text-decoration: none;
+  color: white;
+}
+
+.pagination .active {
+  background-color: #e50914;
+  border-radius: 30%;
+}
+
+@media screen and (max-width: 464px) {
+  .page-align {
+    text-align: center;
+  }
+
+  .pagination * {
+    width: fit-content;
+  }
+
+  .pagination li {
+    width: 90%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/*검색창*/
+.search-input {
+  color: black !important;
+  border-color: black !important;
+}
+.search-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/*footer*/
+@media screen and (min-width: 464px) {
+  .footer {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 30px;
+    color: rgb(212, 212, 212);
+    text-align: center;
+    border-top: 1px solid rgb(40, 40, 40);
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 464px) {
+  .footer {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 30px;
+    color: rgb(212, 212, 212);
+    text-align: center;
+    border-top: 1px solid rgb(40, 40, 40);
+    font-size: 16px;
   }
 }
